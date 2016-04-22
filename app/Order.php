@@ -17,9 +17,13 @@ class Order{
 	}
 
 	public function total(){
-		foreach ($product as $key => $value) {
-			# code...
+		$total = 0;
+
+		foreach ($this->products as $product) {
+			$total += $product->cost();
 		}
+
+		return $total;
 	}
 
 }
